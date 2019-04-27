@@ -34,7 +34,7 @@ create table usuario (
 	ciudad varchar(60),
 	estado varchar(60),
 	cp varchar(20),
-	contrasena varchar(80),
+	contrasena varchar(200),
 	rol varchar(20),
 	primary key (usuario_id)
 );
