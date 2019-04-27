@@ -13,8 +13,9 @@ create table imagen (
 	nombre_imagen varchar(200)
 );
 create table producto (
-	producto_id int NOT NULL UNIQUE,
-	nombre varchar(100),
+	producto_id bigint NOT NULL UNIQUE,
+	nombre_producto varchar(100),
+	nombre_personaje,
 	serie_id varchar(100),
 	stock int NOT NULL,
 	precio decimal,
@@ -22,7 +23,7 @@ create table producto (
 	descuento decimal,
 	altura decimal,
 	marca varchar(100),
-	foreign key (nombre, serie_id) references personaje (nombre, serie_id),
+	foreign key (nombre_personaje, serie_id) references personaje (nombre, serie_id),
 	check(descuento >= 0 and descuento <= 100)
 );
 create table usuario (
@@ -36,7 +37,7 @@ create table usuario (
 	contrasena varchar(80),
 	rol varchar(20),
 	primary key (usuario_id)
-)
+);
 create table ticket (
 	ticket_id serial,
 	usuario_id varchar(40) references usuario(usuario_id),
@@ -72,6 +73,59 @@ insert into usuario values (
 insert into serie values ('boku-no-hero-academia', 'Boku no Hero Academia');
 insert into serie values ('monogatari-series', 'MONOGATARI Series');
 insert into serie values ('kimi-ni-todoke', 'Kimi ni Todoke');
+insert into serie values ('little-witch-academia', 'Little Witch Academia');
+insert into serie values ('love-live', 'Love Live!');
 insert into personaje values ('Hitagi Senjougahara', 'monogatari-series');
 insert into personaje values ('Momo Yaoyorozu', 'boku-no-hero-academia');
 insert into personaje values ('Sawako Kuronuma', 'kimi-ni-todoke');
+insert into personaje values ('Tsubasa Hanekawa', 'monogatari-series');
+insert into personaje values ('Nadeko Sengoku', 'monogatari-series');
+insert into personaje values ('Shinobu Oshino', 'monogatari-series');
+insert into producto values (
+	123456789123,
+	'Senjougahara Hitagi Madoka',
+	'Hitagi Senjougahara',
+	'monogatari-series',
+	3,
+	799,
+	null,
+	0,
+	20,
+	'Banpresto'
+);
+insert into producto values (
+	987654321345,
+	'Sucy Manbavaran Chibi',
+	'Sucy Manbavaran',
+	'little-witch-academia',
+	2,
+	299,
+	null,
+	0,
+	10,
+	'Banpresto'
+);
+insert into producto values (
+	738293678908,
+	'Sucy Manbavaran Nendoroid',
+	'Sucy Manbavaran',
+	'little-witch-academia',
+	3,
+	299,
+	null,
+	10,
+	10,
+	'Banpresto'
+);
+insert into producto values (
+	879065789756,
+	'Maki Nishikino Maid',
+	'Maki Nishikino',
+	'love-live',
+	5,
+	699,
+	null,
+	0,
+	18,
+	'Banpresto'
+);
