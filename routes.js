@@ -10,6 +10,7 @@ router.get('/', (request, response) => {
     });
 });
 router.get('/users', user.getUsers);
+router.post('/users', user.addUser);
 router.get('/characters', products.getCharacters);
 
 module.exports = router;

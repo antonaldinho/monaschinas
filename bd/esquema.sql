@@ -15,7 +15,7 @@ create table imagen (
 create table producto (
 	producto_id bigint NOT NULL UNIQUE,
 	nombre_producto varchar(100),
-	nombre_personaje,
+	nombre_personaje varchar(100),
 	serie_id varchar(100),
 	stock int NOT NULL,
 	precio decimal,
@@ -81,6 +81,14 @@ insert into personaje values ('Sawako Kuronuma', 'kimi-ni-todoke');
 insert into personaje values ('Tsubasa Hanekawa', 'monogatari-series');
 insert into personaje values ('Nadeko Sengoku', 'monogatari-series');
 insert into personaje values ('Shinobu Oshino', 'monogatari-series');
+insert into personaje values ('Sucy Manbavaran', 'little-witch-academia');
+insert into personaje values ('Lotte Janson', 'little-witch-academia');
+insert into personaje values ('Atsuko Kagari', 'little-witch-academia');
+insert into personaje values ('Diana Cavendish', 'little-witch-academia');
+insert into personaje values ('Maki Nishikino', 'love-live');
+insert into personaje values ('Nozomi Toujou', 'love-live');
+insert into personaje values ('Eli Ayase', 'love-live');
+insert into personaje values ('Nico Yazawa', 'love-live');
 insert into producto values (
 	123456789123,
 	'Senjougahara Hitagi Madoka',
