@@ -13,8 +13,9 @@ create table imagen (
 	nombre_imagen varchar(200)
 );
 create table producto (
-	producto_id int NOT NULL UNIQUE,
-	nombre varchar(100),
+	producto_id bigint NOT NULL UNIQUE,
+	nombre_producto varchar(100),
+	nombre_personaje varchar(100),
 	serie_id varchar(100),
 	stock int NOT NULL,
 	precio decimal,
@@ -22,7 +23,7 @@ create table producto (
 	descuento decimal,
 	altura decimal,
 	marca varchar(100),
-	foreign key (nombre, serie_id) references personaje (nombre, serie_id),
+	foreign key (nombre_personaje, serie_id) references personaje (nombre, serie_id),
 	check(descuento >= 0 and descuento <= 100)
 );
 create table usuario (
@@ -33,20 +34,29 @@ create table usuario (
 	ciudad varchar(60),
 	estado varchar(60),
 	cp varchar(20),
-	contrasena varchar(80),
+	contrasena varchar(200),
 	rol varchar(20),
 	primary key (usuario_id)
-)
+);
 create table ticket (
-	ticket_id serial,
+	ticket_id bigint NOT NULL UNIQUE,
 	usuario_id varchar(40) references usuario(usuario_id),
-	producto_id int references producto(producto_id),
-	cantidad int,
 	total decimal,
 	fecha date,
 	comentarios varchar(200)
 );
 
+create table productoticket (
+	productoticket_id serial primary key,
+	ticket_id bigint NOT NULL, 
+	producto_id bigint NOT NULL, 
+	cantidad bigint NOT NULL, 
+	foreign key (ticket_id) references ticket (ticket_id), 
+	foreign key (producto_id) references producto (producto_id)
+);
+
+
+----------------------- insercion de datos ----------------------------------
 insert into usuario values (
 	'antonaldinho',
 	'Jose Antonio Aleman Salazar',
@@ -72,6 +82,71 @@ insert into usuario values (
 insert into serie values ('boku-no-hero-academia', 'Boku no Hero Academia');
 insert into serie values ('monogatari-series', 'MONOGATARI Series');
 insert into serie values ('kimi-ni-todoke', 'Kimi ni Todoke');
+insert into serie values ('little-witch-academia', 'Little Witch Academia');
+insert into serie values ('love-live', 'Love Live!');
 insert into personaje values ('Hitagi Senjougahara', 'monogatari-series');
 insert into personaje values ('Momo Yaoyorozu', 'boku-no-hero-academia');
 insert into personaje values ('Sawako Kuronuma', 'kimi-ni-todoke');
+insert into personaje values ('Tsubasa Hanekawa', 'monogatari-series');
+insert into personaje values ('Nadeko Sengoku', 'monogatari-series');
+insert into personaje values ('Shinobu Oshino', 'monogatari-series');
+insert into personaje values ('Sucy Manbavaran', 'little-witch-academia');
+insert into personaje values ('Lotte Janson', 'little-witch-academia');
+insert into personaje values ('Atsuko Kagari', 'little-witch-academia');
+insert into personaje values ('Diana Cavendish', 'little-witch-academia');
+insert into personaje values ('Maki Nishikino', 'love-live');
+insert into personaje values ('Nozomi Toujou', 'love-live');
+insert into personaje values ('Eli Ayase', 'love-live');
+insert into personaje values ('Nico Yazawa', 'love-live');
+insert into producto values (
+	123456789123,
+	'Senjougahara Hitagi Madoka',
+	'Hitagi Senjougahara',
+	'monogatari-series',
+	3,
+	799,
+	null,
+	0,
+	20,
+	'Banpresto'
+);
+insert into producto values (
+	987654321345,
+	'Sucy Manbavaran Chibi',
+	'Sucy Manbavaran',
+	'little-witch-academia',
+	2,
+	299,
+	null,
+	0,
+	10,
+	'Banpresto'
+);
+insert into producto values (
+	738293678908,
+	'Sucy Manbavaran Nendoroid',
+	'Sucy Manbavaran',
+	'little-witch-academia',
+	3,
+	299,
+	null,
+	10,
+	10,
+	'Banpresto'
+);
+insert into producto values (
+	879065789756,
+	'Maki Nishikino Maid',
+	'Maki Nishikino',
+	'love-live',
+	5,
+	699,
+	null,
+	0,
+	18,
+	'Banpresto');
+insert into ticket values (1, 'cuckarlos', 9388, '04/27/2019', 'puta que oferton');
+insert into ticket values (2, 'cuckarlos', 299, '04/27/2019', 'nice!' );
+insert into productoticket (producto_id, ticket_id, cantidad) values (123456789123, 1, 10);
+insert into productoticket (producto_id, ticket_id, cantidad) values (879065789756, 1, 2);
+insert into productoticket (producto_id, ticket_id, cantidad) values (738293678908, 2, 1);
