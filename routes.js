@@ -27,10 +27,12 @@ router.get('/api/products/getProductsInStock', products.getProductsInStock);
 router.get('/api/products/getProductsWithDiscount', products.getProductsWithDiscount);
 
 //----- ticket routes ------ 
-router.post('/api/ticket/getUserTickets/', ticket.getUserTickets);
-router.post('/api/ticket/getTicketProducts', ticket.getTicketProducts);
-router.post('/api/ticket/getUserTicketProducts', ticket.getUserTicketProducts);
-router.post('/api/ticket/getUserPurchaseHistory', ticket.getUserPurchaseHistory);
-router.post('/api/ticket/findProductInUserTickets', ticket.findProductInUserTickets);
+router.get('/api/ticket/getUserTickets/', ticket.getUserTickets);
+router.get('/api/ticket/getTicketProducts', ticket.getTicketProducts);
+router.get('/api/ticket/getUserTicketProducts', ticket.getUserTicketProducts);
+router.get('/api/ticket/getUserPurchaseHistory', ticket.getUserPurchaseHistory);
+router.get('/api/ticket/findProductInUserTickets', ticket.findProductInUserTickets);
+router.post('/api/ticket/createUserTicket', ticket.creatUserTicket);
+router.delete('/api/ticket/deleteTicket', ticket.deleteTicket);
 
 module.exports = router;

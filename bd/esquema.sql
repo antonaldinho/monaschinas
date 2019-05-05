@@ -8,7 +8,7 @@ create table personaje (
 	PRIMARY KEY (nombre, serie_id)
 );
 create table imagen (
-	imagen_id serial primary key,
+	imagen_id serial PRIMARY KEY,
 	nombre varchar(200),
 	nombre_imagen varchar(200)
 );
@@ -24,7 +24,8 @@ create table producto (
 	altura decimal,
 	marca varchar(100),
 	foreign key (nombre_personaje, serie_id) references personaje (nombre, serie_id),
-	check(descuento >= 0 and descuento <= 100)
+	check(descuento >= 0 and descuento <= 100),
+	PRIMARY KEY (producto_id)
 );
 create table usuario (
 	usuario_id varchar(40) NOT NULL UNIQUE,
@@ -36,18 +37,19 @@ create table usuario (
 	cp varchar(20),
 	contrasena varchar(200),
 	rol varchar(20),
-	primary key (usuario_id)
+	PRIMARY KEY (usuario_id)
 );
 create table ticket (
 	ticket_id bigint NOT NULL UNIQUE,
 	usuario_id varchar(40) references usuario(usuario_id),
 	total decimal,
 	fecha date,
-	comentarios varchar(200)
+	comentarios varchar(200),
+	PRIMARY KEY (ticket_id)
 );
 
 create table productoticket (
-	productoticket_id serial primary key,
+	productoticket_id serial PRIMARY KEY,
 	ticket_id bigint NOT NULL, 
 	producto_id bigint NOT NULL, 
 	cantidad bigint NOT NULL, 
