@@ -100,8 +100,8 @@ function checkUser (user) {
                 return false;
             }
         }
-    })
-}
+    });
+};
 module.exports = {
     getUsers: getUsers,
     addUser: addUser,

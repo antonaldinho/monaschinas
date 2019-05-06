@@ -7,6 +7,7 @@ const pool = new Pool({
     port: 5432
 });
 
+//gets all characters
 const getCharacters = function(request, response) {
     pool.query("SELECT * FROM personaje ORDER BY nombre", (error, results) => {
         if(error) {
@@ -16,7 +17,7 @@ const getCharacters = function(request, response) {
     });
 };
 
-
+//gets all characters of a specific series
 const getCharactersBySerie = function(request, response) {
     if(!request.query.serieId) {
         return response.send({
@@ -44,6 +45,7 @@ const getCharactersBySerie = function(request, response) {
     });
 };
 
+//adds a new character
 const addCharacter = function(request, response) {
     if(!request.body.nombre || !request.body.serieId) {
         return response.send({

@@ -48,6 +48,8 @@ create table ticket (
 	comentarios varchar(200)
 );
 
+alter table producto add categoria varchar(50);
+
 insert into usuario values (
 	'antonaldinho',
 	'Jose Antonio Aleman Salazar',
