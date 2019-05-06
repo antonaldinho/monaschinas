@@ -25,7 +25,8 @@ router.get('/api/products/getProductsByLowerPrice', products.getProductsByLowerP
 router.get('/api/products/getProductsByHigherPrice', products.getProductsByHigherPrice);
 router.get('/api/products/getProductsInStock', products.getProductsInStock);
 router.get('/api/products/getProductsWithDiscount', products.getProductsWithDiscount);
-
+router.post('/api/products/addProduct', products.addProduct);
+router.delete('/api/products/deleteProduct', products.deleteProduct);
 //----- ticket routes ------ 
 router.get('/api/ticket/getUserTickets/', ticket.getUserTickets);
 router.get('/api/ticket/getTicketProducts', ticket.getTicketProducts);

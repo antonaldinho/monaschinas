@@ -92,6 +92,7 @@ insert into personaje values ('Sawako Kuronuma', 'kimi-ni-todoke');
 insert into personaje values ('Tsubasa Hanekawa', 'monogatari-series');
 insert into personaje values ('Nadeko Sengoku', 'monogatari-series');
 insert into personaje values ('Shinobu Oshino', 'monogatari-series');
+insert into personaje values ('Koyomi Araragi', 'monogatari-series');
 insert into personaje values ('Sucy Manbavaran', 'little-witch-academia');
 insert into personaje values ('Lotte Janson', 'little-witch-academia');
 insert into personaje values ('Atsuko Kagari', 'little-witch-academia');
