@@ -108,7 +108,7 @@ insert into producto values (
 	'monogatari-series',
 	3,
 	799,
-	null,
+	1,
 	0,
 	20,
 	'Banpresto'
@@ -153,3 +153,4 @@ insert into ticket values (2, 'cuckarlos', 299, '04/27/2019', 'nice!' );
 insert into productoticket (producto_id, ticket_id, cantidad) values (123456789123, 1, 10);
 insert into productoticket (producto_id, ticket_id, cantidad) values (879065789756, 1, 2);
 insert into productoticket (producto_id, ticket_id, cantidad) values (738293678908, 2, 1);
+insert into imagen(nombre, nombre_imagen) values ('Senjougahara Hitagi Madoka', 'senjo.png');

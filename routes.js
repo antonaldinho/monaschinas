@@ -6,6 +6,7 @@ const products = require('./controllers/products');
 const ticket = require('./controllers/ticket');
 const series = require('./controllers/series');
 const characters = require('./controllers/characters');
+const images = require('./controllers/image');
 
 router.get('/', (request, response) => {
     response.json({
@@ -47,5 +48,8 @@ router.post('/api/series/addSerie', series.addSerie);
 router.get('/api/characters', characters.getCharacters);
 router.get('/api/characters/getCharactersBySerie', characters.getCharactersBySerie);
 router.post('/api/characters/addCharacter', characters.addCharacter);
+//------- images routes ------------------
+router.get('/api/images/', images.getImages);
+router.get('/api/images/getImage', images.getImage);
 
 module.exports = router;

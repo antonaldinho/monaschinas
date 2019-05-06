@@ -73,6 +73,7 @@ const getUserTicketProducts = (request, response) => {
 const getUserPurchaseHistory = (request, response) =>{
     const user_id = request.body.user_id; 
     pool.query(`SELECT t.fecha, 
+                       t.ticket_id,
                        a.cantidad, 
                        p.nombre_producto, 
                        p.nombre_personaje,
@@ -81,7 +82,7 @@ const getUserPurchaseHistory = (request, response) =>{
                        p.descuento,
                        p.marca,
                        p.altura,
-                       p.imagen_id 
+                       p.imagen_id
     FROM ticket t, productoticket a, producto p
     WHERE a.ticket_id = t.ticket_id AND
           a.producto_id = p.producto_id AND
