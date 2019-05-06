@@ -4,6 +4,8 @@ const router = express.Router();
 const user = require('./controllers/users');
 const products = require('./controllers/products');
 const ticket = require('./controllers/ticket');
+const series = require('./controllers/series');
+const characters = require('./controllers/characters');
 
 router.get('/', (request, response) => {
     response.json({
@@ -35,5 +37,15 @@ router.get('/api/ticket/getUserPurchaseHistory', ticket.getUserPurchaseHistory);
 router.get('/api/ticket/findProductInUserTickets', ticket.findProductInUserTickets);
 router.post('/api/ticket/createUserTicket', ticket.creatUserTicket);
 router.delete('/api/ticket/deleteTicket', ticket.deleteTicket);
+//-------user routes ----------
+router.get('/users/:usuario', user.getUser);
+router.post('/users', user.addUser);
+//-------series routes -----------
+router.get('/series', series.getSeries);
+router.post('/series', series.addSerie);
+//------- character routes ----------
+router.get('/characters', characters.getCharacters);
+router.get('/characters/byserie', characters.getCharactersBySerie);
+router.post('/characters', characters.addCharacter);
 
 module.exports = router;
