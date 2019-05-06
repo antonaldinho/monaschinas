@@ -7,7 +7,6 @@ const pool = new Pool({
     port: 5432
 });
 
-<<<<<<< HEAD
 //obtiene todos los productos
 const getProducts = (request, response) =>{
     pool.query(`SELECT * FROM producto p ORDER BY p.nombre_producto ASC`,
@@ -30,8 +29,6 @@ const getProductById = (request, response) => {
             response.status(200).json(results.rows); 
     });
 };
-=======
->>>>>>> 2f91363305696b99d61b61b1ddad7023a8a867bb
 
 //obtiene los productos por nombre (Case Insensitive)
 const getProductsByName = (request, response) => {

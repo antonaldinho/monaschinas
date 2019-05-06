@@ -10,7 +10,6 @@ const pool = new Pool({
 //obtiene todos los tickets de compra de un usuario (GET)
 const getUserTickets = (request, response) => {
     const user_id = request.body.user_id;
-    console.log(request.body);
     pool.query(`SELECT * FROM ticket t
     WHERE t.usuario_id = '${user_id}'`, 
     (error, results)=>{
@@ -116,7 +115,6 @@ const findProductInUserTickets = (request, response)=>{
         }
 
     }
-    console.log(query);
     pool.query(query, 
         (error, results)=>{
             if(error){

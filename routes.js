@@ -13,8 +13,6 @@ router.get('/', (request, response) => {
     });
 });
 
-//--- rutas de user ----
-router.get('/users', user.getUsers);
 
 //----- product routes -----
 router.get('/api/products', products.getProducts);
@@ -38,14 +36,16 @@ router.get('/api/ticket/findProductInUserTickets', ticket.findProductInUserTicke
 router.post('/api/ticket/createUserTicket', ticket.creatUserTicket);
 router.delete('/api/ticket/deleteTicket', ticket.deleteTicket);
 //-------user routes ----------
-router.get('/users/:usuario', user.getUser);
-router.post('/users', user.addUser);
+router.get('/api/users', user.getUsers);
+router.get('/api/users/getUser/:usuario', user.getUser);
+router.post('/api/users/addUser', user.addUser);
+router.delete('/api/users/deleteUser', user.deleteUser);
 //-------series routes -----------
-router.get('/series', series.getSeries);
-router.post('/series', series.addSerie);
+router.get('/api/series/getSeries', series.getSeries);
+router.post('/api/series/addSerie', series.addSerie);
 //------- character routes ----------
-router.get('/characters', characters.getCharacters);
-router.get('/characters/byserie', characters.getCharactersBySerie);
-router.post('/characters', characters.addCharacter);
+router.get('/api/characters', characters.getCharacters);
+router.get('/api/characters/getCharactersBySerie', characters.getCharactersBySerie);
+router.post('/api/characters/addCharacter', characters.addCharacter);
 
 module.exports = router;
