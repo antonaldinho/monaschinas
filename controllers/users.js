@@ -16,6 +16,31 @@ const getUsers = (request, response) => {
     });
 };
 
+const getUser = (request, response) => {
+    if(!request.params.usuario) {
+        return response.send({
+            success: 0,
+            msg: "parameter userId not found"
+        });
+    }
+    return new Promise(function(resolve, reject) {
+        const query = "SELECT * FROM usuario WHERE usuario_id = $1";
+        const values = [request.params.usuario];
+        pool.query(query, values, (error, results) => {
+            if(error) {
+                reject(error);
+            }
+            else {
+                resolve(results);
+            }
+        });
+    }).then((results) => {
+        response.status(200).json(results.rows[0]);
+    }).catch((error) => {
+        response.status(400).json(error);
+    });
+};
+
 const addUser = (request, response) => {
     if(!request.body.username) {
         return response.send({
@@ -44,7 +69,7 @@ const addUser = (request, response) => {
     }
     else {
         const body = request.body;
-        console.log(body);
+        //console.log(body);
         const query = "INSERT INTO usuario VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)";
         const values = [body.username, body.name, body.email, body.address, body.city, body.state, body.cp, body.password, body.userType];
         pool.query(query, values, (error, results) => {
@@ -52,7 +77,7 @@ const addUser = (request, response) => {
                 throw error
             }
             else {
-                console.log(results);
+                //console.log(results);
                 response.send({
                     msg: 'usuario agregado',
                     success: 1
@@ -79,5 +104,6 @@ function checkUser (user) {
 }
 module.exports = {
     getUsers: getUsers,
-    addUser: addUser
+    addUser: addUser,
+    getUser: getUser
 }
