@@ -17,7 +17,7 @@ let loadNavData = (method, url, callback)=>{
 let writeNavData = (series_array)=>{
     let html = ''; 
     for(let serie of series_array){
-       html += `<li><a href="/#">${serie.nombre} </a></li>`;
+       html += `<li><a href="productos.html?nombre_serie=${serie.nombre}">${serie.nombre} </a></li>`;
     }
     series_div.innerHTML = html;
 }
