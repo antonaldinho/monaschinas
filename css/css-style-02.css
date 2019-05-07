@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 [data-icon]:before {
-    font-family: "supercolchones" !important;
+    
     content: attr(data-icon);
     font-style: normal !important;
     font-weight: normal !important;
@@ -15,7 +15,6 @@
 
 [class*=" icon-"]:before,
 [class^=icon-]:before {
-    font-family: "supercolchones" !important;
     font-style: normal !important;
     font-weight: normal !important;
     font-variant: normal !important;
@@ -1344,7 +1343,6 @@ ul.ui-autocomplete li.ui-menu-item a img {
         font-size: 10.8pt;
         font-size: 0.9rem;
         text-align: left;
-        background: white url("https://supercolchones.vteximg.com.br/arquivos/images_layout_nav_background.png") center/cover no-repeat
     }
 }
 
@@ -1396,7 +1394,8 @@ ul.ui-autocomplete li.ui-menu-item a img {
 
     .nav-categories.nav-colchones {
         padding-top: 5px;
-        padding-bottom: 0
+        padding-bottom: 0;
+        background:white;
     }
 
     .nav-categories.nav-colchones .row {
@@ -3861,7 +3860,6 @@ main.list .row.flex {
     width: 100%;
     text-align: center;
     height: 80px;
-    background: url("https://supercolchones.vteximg.com.br/arquivos/loading.gif") center center no-repeat;
     font-size: 0;
     text-indent: -10000px
 }
@@ -4514,7 +4512,6 @@ h3.title-steps {
     font-size: 20px;
     width: 20px;
     height: 24px;
-    font-family: "supercolchones" !important
 }
 
 .busqueda .menu-departamento .search-single-navigator h3.active:after {
@@ -4600,7 +4597,6 @@ h3.title-steps {
     font-size: 20px;
     width: 20px;
     height: 24px;
-    font-family: "supercolchones" !important
 }
 
 .menu-departamento .search-single-navigator h5.active:after {
@@ -5077,7 +5073,7 @@ body.home-design .characters-board__title+img {
 .stores-board-wrapper {
     padding-top: 75px;
     padding-bottom: 75px;
-    background: #009de7 url("https://supercolchones.vteximg.com.br/arquivos/images_pattern-04.png") center repeat
+    background: #009de7;
 }
 
 @media screen and (min-width:768px) {
@@ -5130,7 +5126,7 @@ body.home-design .characters-board__title+img {
     padding-bottom: 75px;
     border-top: 3px solid #3d3739;
     text-align: center;
-    background: #ffddff url("https://supercolchones.vteximg.com.br/arquivos/images_pattern-03.png") center repeat
+    background: #ffddff;
 }
 
 .newsletter-subscribe-title {
@@ -5199,10 +5195,6 @@ body.home-design .characters-board__title+img {
     padding-top: 30px
 }
 
-.social-media__wrapper {
-    color: white;
-    background: #009de7 url("https://supercolchones.vteximg.com.br/arquivos/images_layout_social-media-back.jpg") center/cover no-repeat
-}
 
 .social-media {
     display: -webkit-box;
@@ -5963,7 +5955,6 @@ body.home-design .characters-board__title+img {
 
 .owl-carousel .owl-next:before,
 .owl-carousel .owl-prev:before {
-    font-family: "supercolchones" !important;
     font-size: 30pt;
     font-size: 2.5rem;
     opacity: .5;
@@ -8526,21 +8517,7 @@ body {
     color: white !important
 }
 
-#ajaxBusy {
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    z-index: 1000;
-    border-radius: 50%;
-    margin-left: -25px;
-    font-size: 0;
-    text-indent: -1000px;
-    background: white url("https://supercolchones.vteximg.com.br/arquivos/loading.gif") center center no-repeat;
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
-}
+
 
 .box-reset {
     padding-left: 0 !important;
@@ -12262,7 +12239,6 @@ main {
 .go-to-top i:before {
     color: white;
     content: '\6d';
-    font-family: "supercolchones" !important;
     font-size: 20px
 }
 
@@ -12969,6 +12945,105 @@ h2.title-carousel {
     }
     .magnify-icon {
         height: 25px;
+    }
+    .login-wrapper-producto {
+        width: 100%;
+        display: inline;
+        float: left;
+    }
+    .login_titulo_producto {
+        background-color: #7FABB1;
+        margin-bottom: 0vw;
+        border-radius: 5px 5px 0px 0px;
+        width: 100%;
+    }
+    .login_forma_producto {
+        background-color: #ffffff;
+        margin-bottom: 0vw;
+        display: inline;
+        float: left;
+        width: 100%;
+    }
+    .perfil-tabla-titulo {
+        float: left;
+        display: inline;
+        margin-left: 1vw;
+        font-weight: 600;
+        width: 100%;
+        margin-top:2vw;
+    }
+    .tabla-ordenes {
+        width: 85%;
+        margin-left: 5.7vw;
+        margin-bottom: 1vw;
+        /* border: 1px solid black; */
+    }
+    .tabla-ordenes-inside {
+        border: 1px solid black;
+        text-align: center;
+    }
+    .login_body_Perfil {
+        display: inline;
+        float: left;
+        width: 100%;
+    }
+    .who_Quienes_Perfil{
+        display: inline;
+        float: left;
+        width: 100%;
+    }
+    .tabla-ordenes-inside_titulo {
+        border: 1px solid black;
+        text-align: center;
+        font-weight: 600;
+    }
+    .login-forma-first-picture {
+        display: inline;
+        float:left;
+        margin-left: 1vw;
+    }
+    .login_forma_producto_part1 {
+        display: inline;
+        float:left;
+        width:21%;
+    }
+    .login_forma_producto_part2 {
+        display: inline;
+        float:left;
+        width:79%;
+    }
+    .btn_comprar{
+        float: right;
+        background-color: #1394CE;
+        color: white;
+        width: 9vw;
+        font-size: 1.5vw;
+    }
+    .btn_producto_container {
+        display: inline;
+        float: left;
+        margin-left: 1vw;
+        margin-bottom: 1vw;
+        width: 93%
+    }
+    .btn_producto {
+        float: right;
+        background-color: #1394CE;
+        color: white;
+        width: 9vw;
+        font-size: 1.5vw;
+    }
+    a.brand_full {
+        display: block;
+        position: absolute;
+        top: -17px;
+        left: -11px;
+        width: 183px;
+        height: 108px;
+        z-index: 60;
+        -webkit-transition: all 0s;
+        -o-transition: all 0s;
+        transition: all 0s;
     }
 }
 .top-message-hamburguer {
