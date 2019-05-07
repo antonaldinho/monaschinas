@@ -117,7 +117,7 @@ const login = function(request, response) {
         });
     }).then((results) => {
         if(results.rowCount == 0) {
-            response.status(400).json({
+            response.status(200).json({
                 success: 0,
                 msg: "username does not exist"
             });
@@ -137,7 +137,7 @@ const login = function(request, response) {
                 });
             }
             else {
-                response.status(400).json({
+                response.status(200).json({
                     success: 0,
                     msg: "invalid password"
                 });
