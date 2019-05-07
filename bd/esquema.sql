@@ -49,6 +49,17 @@ create table ticket (
 );
 
 alter table producto add categoria varchar(50);
+alter table ticket add primary key (ticket_id)
+
+create table productoticket (
+	productoticket_id serial PRIMARY KEY,
+	ticket_id bigint NOT NULL, 
+	producto_id bigint NOT NULL, 
+	cantidad bigint NOT NULL, 
+	foreign key (ticket_id) references ticket (ticket_id), 
+	foreign key (producto_id) references producto (producto_id)
+);
+
 
 insert into usuario values (
 	'antonaldinho',
