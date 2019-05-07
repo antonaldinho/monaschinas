@@ -1,5 +1,6 @@
 let series_div = document.getElementById('lista-de-series-div');
 let base = 'http://localhost:3000';
+
 let loadNavData = (method, url, callback)=>{
     let request = new XMLHttpRequest(); 
     request.onreadystatechange = ()=>{
