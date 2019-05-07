@@ -87,6 +87,34 @@ const addUser = (request, response) => {
     }
 }
 
+const deleteUser = (request, response)=>{
+    let user_id = request.body.user_id; 
+
+    let ticket_query = `SELECT ticket_id FROM ticket t WHERE t.usuario_id = '${user_id}'`;
+    pool.query(ticket_query, (error, results)=>{
+        if (error)
+            throw error; 
+        else { 
+            for(let row of results.rows){//deslinda todos los tickets de los productos
+                let productoticket_delete_query = `DELETE FROM productoticket a WHERE a.ticket_id = ${row.ticket_id}`;
+                pool.query(productoticket_delete_query, (error, results)=>{
+                    if (error)
+                        throw error;
+                    else{
+                        //borra los tickets y al usuario 
+                        let delete_tickets_query = `DELETE FROM ticket t WHERE t.usuario_id = '${user_id}';
+                        DELETE FROM usuario u WHERE u.usuario_id = '${user_id}'`;
+                        pool.query(delete_tickets_query, (error, results)=>{if(error)throw error;});
+                    }
+                });
+            }
+        }
+    
+    });
+
+    response.status(200).send("OK!");
+}
+
 function checkUser (user) {
     pool.query('SELECT COUNT(usuario_id) FROM usuario WHERE usuario_id = $1',[user], (error, results) => {
         if(error) {
@@ -154,5 +182,6 @@ module.exports = {
     getUsers: getUsers,
     addUser: addUser,
     getUser: getUser,
-    login: login
+    login: login,
+    deleteUser: deleteUser
 }

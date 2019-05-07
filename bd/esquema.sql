@@ -8,7 +8,7 @@ create table personaje (
 	PRIMARY KEY (nombre, serie_id)
 );
 create table imagen (
-	imagen_id serial primary key,
+	imagen_id serial PRIMARY KEY,
 	nombre varchar(200),
 	nombre_imagen varchar(200)
 );
@@ -24,7 +24,8 @@ create table producto (
 	altura decimal,
 	marca varchar(100),
 	foreign key (nombre_personaje, serie_id) references personaje (nombre, serie_id),
-	check(descuento >= 0 and descuento <= 100)
+	check(descuento >= 0 and descuento <= 100),
+	PRIMARY KEY (producto_id)
 );
 create table usuario (
 	usuario_id varchar(40) NOT NULL UNIQUE,
@@ -36,16 +37,15 @@ create table usuario (
 	cp varchar(20),
 	contrasena varchar(200),
 	rol varchar(20),
-	primary key (usuario_id)
+	PRIMARY KEY (usuario_id)
 );
 create table ticket (
-	ticket_id serial,
+	ticket_id bigint NOT NULL UNIQUE,
 	usuario_id varchar(40) references usuario(usuario_id),
-	producto_id int references producto(producto_id),
-	cantidad int,
 	total decimal,
 	fecha date,
-	comentarios varchar(200)
+	comentarios varchar(200),
+	PRIMARY KEY (ticket_id)
 );
 
 alter table producto add categoria varchar(50);
@@ -94,6 +94,7 @@ insert into personaje values ('Sawako Kuronuma', 'kimi-ni-todoke');
 insert into personaje values ('Tsubasa Hanekawa', 'monogatari-series');
 insert into personaje values ('Nadeko Sengoku', 'monogatari-series');
 insert into personaje values ('Shinobu Oshino', 'monogatari-series');
+insert into personaje values ('Koyomi Araragi', 'monogatari-series');
 insert into personaje values ('Sucy Manbavaran', 'little-witch-academia');
 insert into personaje values ('Lotte Janson', 'little-witch-academia');
 insert into personaje values ('Atsuko Kagari', 'little-witch-academia');
@@ -109,7 +110,7 @@ insert into producto values (
 	'monogatari-series',
 	3,
 	799,
-	null,
+	1,
 	0,
 	20,
 	'Banpresto'
@@ -148,5 +149,10 @@ insert into producto values (
 	null,
 	0,
 	18,
-	'Banpresto'
-);
+	'Banpresto');
+insert into ticket values (1, 'cuckarlos', 9388, '04/27/2019', 'puta que oferton');
+insert into ticket values (2, 'cuckarlos', 299, '04/27/2019', 'nice!' );
+insert into productoticket (producto_id, ticket_id, cantidad) values (123456789123, 1, 10);
+insert into productoticket (producto_id, ticket_id, cantidad) values (879065789756, 1, 2);
+insert into productoticket (producto_id, ticket_id, cantidad) values (738293678908, 2, 1);
+insert into imagen(nombre, nombre_imagen) values ('Senjougahara Hitagi Madoka', 'senjo.png');
