@@ -102,8 +102,57 @@ function checkUser (user) {
         }
     });
 };
+
+const login = function(request, response) {
+    const body = request.body;
+    const query1 = "SELECT contrasena FROM usuario WHERE usuario_id = $1";
+    return new Promise((resolve, reject) => {
+        pool.query(query1, [body.username], (error, results) => {
+            if(error) {
+                reject(error);
+            }
+            else {
+                resolve(results);
+            }
+        });
+    }).then((results) => {
+        if(results.rowCount == 0) {
+            response.status(400).json({
+                success: 0,
+                msg: "username does not exist"
+            });
+        }
+        else {
+            if(body.password == results.rows[0].contrasena) {
+                pool.query("SELECT * FROM usuario WHERE usuario_id = $1", [body.username], (error, results) => {
+                    if(error) {
+                        throw error;
+                    }
+                    else {
+                        response.status(200).json({
+                            success: 1,
+                            user: results.rows[0]
+                        });
+                    }
+                });
+            }
+            else {
+                response.status(400).json({
+                    success: 0,
+                    msg: "invalid password"
+                });
+            }
+        }
+    }).catch((error) => {
+        response.status(400).json({
+            success: 0,
+            error: error
+        });
+    });
+}
 module.exports = {
     getUsers: getUsers,
     addUser: addUser,
-    getUser: getUser
+    getUser: getUser,
+    login: login
 }

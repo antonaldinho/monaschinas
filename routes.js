@@ -14,6 +14,7 @@ router.get('/', (request, response) => {
 router.get('/users', user.getUsers);
 router.get('/users/:usuario', user.getUser);
 router.post('/users', user.addUser);
+router.post('/login', user.login);
 router.get('/series', series.getSeries);
 router.post('/series', series.addSerie);
 router.get('/characters', characters.getCharacters);
