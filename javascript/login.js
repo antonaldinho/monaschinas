@@ -16,7 +16,6 @@ $(document).ready(function() {
             "headers": {
               "Content-Type": "application/json"
             },
-            "async": "false",
             "processData": false,
             "data": JSON.stringify(credentials)
         }

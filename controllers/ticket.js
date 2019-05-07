@@ -70,9 +70,10 @@ const getUserTicketProducts = (request, response) => {
 }
 
 //obtiene todos los productos que ha comprado un usuario desde que se registro(GET)
-const getUserPurchaseHistory = (request, response) =>{
-    const user_id = request.body.user_id; 
-    pool.query(`SELECT t.fecha, 
+const getUserPurchaseHistory = function(request, response) {
+    const user_id = request.query.user_id;
+    return new Promise((resolve, reject) => {
+        pool.query(`SELECT t.fecha, 
                        t.ticket_id,
                        a.cantidad, 
                        p.nombre_producto, 
@@ -83,15 +84,29 @@ const getUserPurchaseHistory = (request, response) =>{
                        p.marca,
                        p.altura,
                        p.imagen_id
-    FROM ticket t, productoticket a, producto p
-    WHERE a.ticket_id = t.ticket_id AND
-          a.producto_id = p.producto_id AND
-          t.usuario_id = '${user_id}'`,
-    (error, results) => {
-        if(error){
-            throw error;
-        } response.status(200).json(results.rows);
-    });
+        FROM ticket t, productoticket a, producto p
+        WHERE a.ticket_id = t.ticket_id AND
+            a.producto_id = p.producto_id AND
+            t.usuario_id = '${user_id}'`,
+        (error, results) => {
+            if(error){
+                reject(error);
+            }
+            else {
+                resolve(results);
+            }
+        });
+    }).then((results) => {
+        response.status(200).json({
+            success: 1,
+            products: results.rows
+        });
+    }).catch((error) => {
+        response.status(400).json({
+            success: 0,
+            error: error
+        });
+    })
 }
 
 //regresa todos los tickets del usuario donde cualquiera de los nombres de los productos contenga cualqueira de las palabras introducidas,

@@ -156,3 +156,5 @@ insert into productoticket (producto_id, ticket_id, cantidad) values (1234567891
 insert into productoticket (producto_id, ticket_id, cantidad) values (879065789756, 1, 2);
 insert into productoticket (producto_id, ticket_id, cantidad) values (738293678908, 2, 1);
 insert into imagen(nombre, nombre_imagen) values ('Senjougahara Hitagi Madoka', 'senjo.png');
+
+select * from producto p, ticket t, productoticket a where t.ticket_id = a.ticket_id and a.producto_id = p.producto_id and usuario_id = 'antonaldinho'
