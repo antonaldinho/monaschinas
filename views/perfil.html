@@ -23,15 +23,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <style type="text/css">
-        iframe#_hjRemoteVarsFrame {
-            display: none !important;
-            width: 1px !important;
-            height: 1px !important;
-            opacity: 0 !important;
-            pointer-events: none !important;
-        }
-    </style>
+    
 
 </head>
 
@@ -148,7 +140,7 @@
                     <a href="/#">
                         <div class="btn-menu" style="margin-left: 4vw"><button></button><span>Nosotros</span></div>
                     </a>
-                    <a href="/#">
+                    <a href="productos.html">
                         <div class="btn-menu" style="margin-left: 4vw"><button></button><span>Productos</span></div>
                     </a>
                     <a href="perfil.html">
@@ -162,45 +154,54 @@
 
     <main role="main" class="page-main--home-page">
         <div class="re-central">
-            <div class="login-wrapper">
+            <div class="login-wrapper-producto">
 
-                <div class="login_body">
-                    <div class="who_Quienes">
+                <div class="login_body_Perfil">
+                    <div class="who_Quienes_Perfil">
                         <br>
-                        <div class="login_titulo">
-                            <div class="login_titulo_text">Recuperar Contraseña</div>
+                        <div class="login_titulo_producto">
+                            <div class="login_titulo_text">Perfil</div>
                         </div>
-                        <form class="login_forma">
+                        <form class="login_forma_producto">
                             <div class="login-forma-first">
-                                <div class="login-title-psw">
-                                    <label class="login-title_text" for="fname">Contraseña Actual</label>
+                                <div class="login-title">
+                                    <label class="login-title_text" for="fname">Usuario</label>
 
                                 </div>
                                 <div class="login-input">
-                                    <input class="login-input" type="password" id="login_email"
-                                        placeholder="******"><br><br>
+                                    JohnDoe420<br><br>
                                 </div>
                             </div>
                             <div class="login-forma-first">
-                                <div class="login-title-psw">
-                                    <label class="login-title_text" for="lname">Nueva Contraseña</label><br>
+                                <div class="login-title">
+                                    <label class="login-title_text" for="lname">Direccion</label><br>
                                 </div>
                                 <div class="login-input">
-                                    <input class="login-input" type="password" id="login_pword"
-                                        placeholder="******"><br><br>
+                                    Rainbow Road<br><br>
                                 </div>
                             </div>
-                            <div class="login-forma-first">
-                                    <div class="login-title-psw">
-                                        <label class="login-title_text" for="lname">Confirmar Contraseña</label><br>
-                                    </div>
-                                    <div class="login-input">
-                                        <input class="login-input" type="password" id="login_pword"
-                                            placeholder="******"><br><br>
-                                    </div>
-                                </div>
-                            <div class="btn_login">
-                                <input class="btn_login_button"onclick="loginBtn()" type="button" value="Cambiar">
+                            <a href="actualizar.html">
+                            <div class="btn_register">Actualizar Información</div>
+                            </a>
+                            <div class="perfil-tabla">
+                                <div class="perfil-tabla-titulo">Historial de Productos</div>
+                                <table class="tabla-ordenes">
+                                    <tr class="tabla-ordenes-inside">
+                                      <th class="tabla-ordenes-inside_titulo">Producto</th>
+                                      <th class="tabla-ordenes-inside_titulo">Cantidad</th> 
+                                      <th class="tabla-ordenes-inside_titulo">Precio</th>
+                                    </tr>
+                                    <tr class="tabla-ordenes-inside">
+                                      <td class="tabla-ordenes-inside">Senjougahara</td>
+                                      <td class="tabla-ordenes-inside">3</td> 
+                                      <td class="tabla-ordenes-inside">7000</td>
+                                    </tr>
+                                    <tr class="tabla-ordenes-inside">
+                                      <td class="tabla-ordenes-inside">Miku Hatsune</td>
+                                      <td class="tabla-ordenes-inside">1</td> 
+                                      <td class="tabla-ordenes-inside">1500</td>
+                                    </tr>
+                                  </table>
                             </div>
                         </form>
                     </div>

@@ -98,7 +98,8 @@
                                     <div class="field-wrapper"><input type="text" id="searchbarInput1"
                                             class="fulltext-search-box ui-autocomplete-input" value="" placeholder=""
                                             autocomplete="off" role="textbox" aria-autocomplete="list"
-                                            aria-haspopup="true"><button type="submit" id="searchbarButton1"><img class="magnify-icon"src="..\images\search.png"/></button></div>
+                                            aria-haspopup="true"><button type="submit" id="searchbarButton1"><img
+                                                class="magnify-icon" src="..\images\search.png" /></button></div>
                                 </form>
                             </div>
                 </div>
@@ -106,18 +107,20 @@
                     <div class="phone"></div>
                     <ul>
 
-                            <li id="account-top" class="subnav"><a href="/#"><img class="icon_bar" src="..\images\user.png"/></a>
-                                <ul class="subnav-wrapper">
-                                    <li><a href="perfil.html">Mi cuenta</a></li>
-                                    <li class="logout"><a href="/#">Salir</a></li>
-                                </ul>
-                            </li>
-                            <li id="minicart-container"><a href="/#"><img class="icon_bar" src="..\images\shopping-cart.png"/><span
-                                        id="total-cart-items">0</span></a></li>
+                        <li id="account-top" class="subnav"><a href="/#"><img class="icon_bar"
+                                    src="..\images\user.png" /></a>
+                            <ul class="subnav-wrapper">
+                                <li><a href="perfil.html">Mi cuenta</a></li>
+                                <li class="logout"><a href="/#">Salir</a></li>
+                            </ul>
+                        </li>
+                        <li id="minicart-container"><a href="/#"><img class="icon_bar"
+                                    src="..\images\shopping-cart.png" /><span id="total-cart-items">0</span></a></li>
                     </ul>
                 </div>
             </div>
         </div>
+
         <div class="bg-white">
             <div class="re-central">
                 <!-- Nav. Begin -->
@@ -148,7 +151,7 @@
                     <a href="/#">
                         <div class="btn-menu" style="margin-left: 4vw"><button></button><span>Nosotros</span></div>
                     </a>
-                    <a href="/#">
+                    <a href="productos.html">
                         <div class="btn-menu" style="margin-left: 4vw"><button></button><span>Productos</span></div>
                     </a>
                     <a href="perfil.html">
@@ -162,45 +165,50 @@
 
     <main role="main" class="page-main--home-page">
         <div class="re-central">
-            <div class="login-wrapper">
+            <div class="login-wrapper-producto">
 
                 <div class="login_body">
                     <div class="who_Quienes">
                         <br>
-                        <div class="login_titulo">
-                            <div class="login_titulo_text">Recuperar Contraseña</div>
+                        <div class="login_titulo_producto">
+                            <div class="login_titulo_text">Producto Nombre</div>
                         </div>
-                        <form class="login_forma">
-                            <div class="login-forma-first">
-                                <div class="login-title-psw">
-                                    <label class="login-title_text" for="fname">Contraseña Actual</label>
-
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="password" id="login_email"
-                                        placeholder="******"><br><br>
+                        <form class="login_forma_producto">
+                            <div class="login_forma_producto_part1">
+                                <div class="login-forma-first">
+                                    <img class="login-forma-first-picture" src="https://via.placeholder.com/200">
                                 </div>
                             </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-psw">
-                                    <label class="login-title_text" for="lname">Nueva Contraseña</label><br>
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="password" id="login_pword"
-                                        placeholder="******"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                    <div class="login-title-psw">
-                                        <label class="login-title_text" for="lname">Confirmar Contraseña</label><br>
+                            <div class="login_forma_producto_part2">
+                                <div class="login-forma-first">
+                                    <div class="login-title">
+                                        <label class="login-title_text" for="fname">Nombre del Producto</label>
                                     </div>
                                     <div class="login-input">
-                                        <input class="login-input" type="password" id="login_pword"
-                                            placeholder="******"><br><br>
+                                        Shinobu Oshino <br><br>
                                     </div>
                                 </div>
-                            <div class="btn_login">
-                                <input class="btn_login_button"onclick="loginBtn()" type="button" value="Cambiar">
+                                <div class="login-forma-first">
+                                        <div class="login-title">
+                                            <label class="login-title_text" for="fname">Precio</label>
+                                        </div>
+                                        <div class="login-input">
+                                            $666.00 <br><br>
+                                        </div>
+                                    </div>
+                                <div class="login-forma-first">
+                                    <div class="login-title">
+                                        <label class="login-title_text" for="lname">Descripción</label><br>
+                                    </div>
+                                    <div class="login-input">
+                                        Figura de 13" altura y 5" ancho. Hecha de Polimeros.....<br><br>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="btn_producto_container">
+                                <input class="btn_producto" onclick="loginBtn()" type="button"
+                                    value="Comprar">
                             </div>
                         </form>
                     </div>
@@ -252,19 +260,11 @@
         </div>
     </footer>
     <div class="go-to-top"><i class="icon-go-to-top"></i></div>
-    <script type="text/html" id="cart-template">
-	<div class="overlay"></div>
-	
-</script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <div class="overlay"></div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox"
-        aria-activedescendant="ui-active-menuitem" style="z-index: 10; top: 0px; left: 0px; display: none;"></ul>
-    <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox"
-        aria-activedescendant="ui-active-menuitem" style="z-index: 11; top: 0px; left: 0px; display: none;"></ul>
-
 
 </body>
 
