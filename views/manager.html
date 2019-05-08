@@ -23,15 +23,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <style type="text/css">
-        iframe#_hjRemoteVarsFrame {
-            display: none !important;
-            width: 1px !important;
-            height: 1px !important;
-            opacity: 0 !important;
-            pointer-events: none !important;
-        }
-    </style>
+
 
 </head>
 
@@ -73,7 +65,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="perfil.html">
+                                        <a href="/#">
                                             <div class="btn-menu">
                                                 <button></button><span>Historial</span>
                                             </div>
@@ -98,14 +90,15 @@
                             <div class="field-wrapper"><input type="text" id="searchbarInput1"
                                     class="fulltext-search-box ui-autocomplete-input" value="" placeholder=""
                                     autocomplete="off" role="textbox" aria-autocomplete="list"
-                                    aria-haspopup="true"><button type="submit" class="magnify" id="searchbarButton1">
-                                    <img class="magnify-icon" src="..\images\search.png" /></button></div>
+                                    aria-haspopup="true"><button type="submit" id="searchbarButton1"><img
+                                        class="magnify-icon" src="..\images\search.png" /></button></div>
                         </form>
                     </div>
                 </div>
                 <div class="topnav">
                     <div class="phone"></div>
                     <ul>
+
                         <li id="account-top" class="subnav"><a href="/#"><img class="icon_bar"
                                     src="..\images\user.png" /></a>
                             <ul class="subnav-wrapper">
@@ -163,103 +156,48 @@
 
     <main role="main" class="page-main--home-page">
         <div class="re-central">
-            <div class="login-wrapper">
+            <div class="login-wrapper-producto">
 
-                <div class="login_body">
-                    <div class="who_Quienes">
+                <div class="login_body_Perfil">
+                    <div class="who_Quienes_Perfil">
                         <br>
-                        <div class="login_titulo">
-                            <div class="login_titulo_text">Registrate</div>
+                        <div class="login_titulo_producto">
+                            <div class="login_titulo_text">Management</div>
                         </div>
-                        <form class="login_forma">
+                        <form class="login_forma_producto">
 
                             <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Usuario</label>
+                                <div class="btn_producto_container">
+                                    <a href="nuevoProducto.html">
+                                        <button type="button" class="btn btn-primary">Agregar Producto</button>
+                                    </a>
                                 </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="text" id="login_usr"
-                                        placeholder="JohnDoe420"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Nombre</label>
 
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="text" id="login_name"
-                                        placeholder="John Doe"><br><br>
-                                </div>
                             </div>
 
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Email</label>
-
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="email" id="login_email"
-                                        placeholder="John@Doe.com"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Dirección</label>
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="text" id="login_dir"
-                                        placeholder="Rainbow Road"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Ciudad</label>
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="text" id="login_city"
-                                        placeholder="Ashen Valley"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Estado</label>
-
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="text" id="login_state"
-                                        placeholder="Nuevo León"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Codigo Postal</label>
-
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="text" id="login_cp" placeholder="67891"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="lname">Contraseña</label><br>
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="email" id="login_pword"
-                                        placeholder="john@doe.com"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="lname">Confirmar Contraseña</label><br>
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="email" id="login_pword"
-                                        placeholder="john@doe.com"><br><br>
-                                </div>
-                            </div>
-                            <div class="btn_login">
-                                <input class="btn_login_button" onclick="loginBtn()" type="button" value="Registrar">
+                            <div class="perfil-tabla">
+                                <div class="perfil-tabla-titulo">Historial de Productos</div>
+                                <table class="tabla-ordenes">
+                                    <tr class="tabla-ordenes-inside">
+                                        <th class="tabla-ordenes-inside_titulo">Producto</th>
+                                        <th class="tabla-ordenes-inside_titulo">Stock</th>
+                                        <th class="tabla-ordenes-inside_titulo">Borrar</th>
+                                    </tr>
+                                    <tr class="tabla-ordenes-inside">
+                                        <td class="tabla-ordenes-inside">Ononoki Yotsugi Figurine 10"</td>
+                                        <td class="tabla-ordenes-inside">15</td>
+                                        <td class="tabla-ordenes-inside">
+                                            <input class="btn_borrar" type="button" value="Borrar">
+                                        </td>
+                                    </tr>
+                                    <tr class="tabla-ordenes-inside">
+                                        <td class="tabla-ordenes-inside">Oshino Ougi Figurine 15"</td>
+                                        <td class="tabla-ordenes-inside">15</td>
+                                        <td class="tabla-ordenes-inside">
+                                            <input class="btn_borrar" type="button" value="Borrar">
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </form>
                     </div>
@@ -315,10 +253,10 @@
 	<div class="overlay"></div>
 	
 </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 
     <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox"
         aria-activedescendant="ui-active-menuitem" style="z-index: 10; top: 0px; left: 0px; display: none;"></ul>
