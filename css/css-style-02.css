@@ -13101,6 +13101,13 @@ h2.title-carousel {
         height: 100vh;
         background-color: #000;
     }
+    .btn_cancel_button {
+        float:right;
+        background-color:#1394CE;
+        color:white;
+        width: 8vw;
+        margin-left:1vw; 
+    }
 }
 .top-message-hamburguer {
     display:none;
