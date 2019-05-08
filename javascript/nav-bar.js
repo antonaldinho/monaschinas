@@ -1,5 +1,5 @@
 let series_div = document.getElementById('lista-de-series-div');
-let base = 'http://192.168.99.1:3000';
+let base = 'http://10.23.3.35:3000';
 
 let loadNavData = (method, url, callback)=>{
     let request = new XMLHttpRequest(); 
