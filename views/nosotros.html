@@ -73,7 +73,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="perfil.html">
+                                        <a href="/#">
                                             <div class="btn-menu">
                                                 <button></button><span>Historial</span>
                                             </div>
@@ -98,16 +98,16 @@
                             <div class="field-wrapper"><input type="text" id="searchbarInput1"
                                     class="fulltext-search-box ui-autocomplete-input" value="" placeholder=""
                                     autocomplete="off" role="textbox" aria-autocomplete="list"
-                                    aria-haspopup="true"><button type="submit" class="magnify" id="searchbarButton1">
-                                    <img class="magnify-icon" src="..\images\search.png" /></button></div>
+                                    aria-haspopup="true"><button type="submit" id="searchbarButton1"><img
+                                        class="magnify-icon" src="..\images\search.png" /></button></div>
                         </form>
                     </div>
                 </div>
                 <div class="topnav">
                     <div class="phone"></div>
                     <ul>
-                        <li id="account-top" class="subnav"><a><img class="icon_bar"
-                                    src="..\images\user.png" /></a>
+
+                        <li id="account-top" class="subnav"><a><img class="icon_bar" src="..\images\user.png" /></a>
                             <ul class="subnav-wrapper">
                                 <li><a href="perfil.html">Mi cuenta</a></li>
                                 <li class="logout"><a href="home.html">Salir</a></li>
@@ -119,6 +119,7 @@
                 </div>
             </div>
         </div>
+
         <div class="bg-white">
             <div class="re-central">
                 <!-- Nav. Begin -->
@@ -163,103 +164,28 @@
 
     <main role="main" class="page-main--home-page">
         <div class="re-central">
-            <div class="login-wrapper">
+            <div class="login-wrapper-producto">
 
-                <div class="login_body">
-                    <div class="who_Quienes">
+                <div class="login_body_productos">
+                    <div class="who_Quienes_productos">
                         <br>
-                        <div class="login_titulo">
-                            <div class="login_titulo_text">Registrate</div>
+                        <div class="login_titulo_producto">
+                            <div class="login_titulo_text">Nosotros</div>
                         </div>
-                        <form class="login_forma">
-
+                        <form class="login_forma_producto">
                             <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Usuario</label>
+                                <div class="login-nosotros">
+                                    Weeb nation es un startup iniciada por juan clemente Martínez como un proyecto
+                                    personal, que lentamente fue creciendo hasta llegar a un "reach" global. Somos una
+                                    de las importadoras de artículos y juguetes orientales más grandes del norte del
+                                    país. Tenemos mucha experiencia manejando logística, y importaciones de productos.
+                                    ¡También consiguiendo y importando artículos específicos para nuestros clientes!
+                                    ¡Para informes de importaciones personalizadas o motivos empresariales favor de
+                                    contactarse a nuestro help desk al +512312387 o al correo Weebnation.jp!
+                                    Todos nuestros productos son 100% nuevos, originales y importados directamente desde
+                                    Japón, los envíos son via FedEx y DHL asegurados y en cajas discretas por la
+                                    privacidad del comprador.<br><br>
                                 </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="text" id="login_usr"
-                                        placeholder="JohnDoe420"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Nombre</label>
-
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="text" id="login_name"
-                                        placeholder="John Doe"><br><br>
-                                </div>
-                            </div>
-
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Email</label>
-
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="email" id="login_email"
-                                        placeholder="John@Doe.com"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Dirección</label>
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="text" id="login_dir"
-                                        placeholder="Rainbow Road"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Ciudad</label>
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="text" id="login_city"
-                                        placeholder="Ashen Valley"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Estado</label>
-
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="text" id="login_state"
-                                        placeholder="Nuevo León"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="fname">Codigo Postal</label>
-
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="text" id="login_cp" placeholder="67891"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="lname">Contraseña</label><br>
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="email" id="login_pword"
-                                        placeholder="john@doe.com"><br><br>
-                                </div>
-                            </div>
-                            <div class="login-forma-first">
-                                <div class="login-title-rgr">
-                                    <label class="login-title_text" for="lname">Confirmar Contraseña</label><br>
-                                </div>
-                                <div class="login-input">
-                                    <input class="login-input" type="email" id="login_pword"
-                                        placeholder="john@doe.com"><br><br>
-                                </div>
-                            </div>
-                            <div class="btn_login">
-                                <input class="btn_login_button" onclick="loginBtn()" type="button" value="Registrar">
                             </div>
                         </form>
                     </div>
@@ -311,20 +237,11 @@
         </div>
     </footer>
     <div class="go-to-top"><i class="icon-go-to-top"></i></div>
-    <script type="text/html" id="cart-template">
-	<div class="overlay"></div>
-	
-</script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <div class="overlay"></div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-
-    <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox"
-        aria-activedescendant="ui-active-menuitem" style="z-index: 10; top: 0px; left: 0px; display: none;"></ul>
-    <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox"
-        aria-activedescendant="ui-active-menuitem" style="z-index: 11; top: 0px; left: 0px; display: none;"></ul>
-
 
 </body>
 

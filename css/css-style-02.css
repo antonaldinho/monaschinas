@@ -13108,6 +13108,12 @@ h2.title-carousel {
         width: 8vw;
         margin-left:1vw; 
     }
+    .login-nosotros {
+        display: inline;
+        float: left;
+        width: 98%;
+        margin-left: 1vw;
+    }
 }
 .top-message-hamburguer {
     display:none;
