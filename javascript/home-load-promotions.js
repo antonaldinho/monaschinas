@@ -9,7 +9,9 @@ const placeImages = (products)=>{
     for(let n = 0; n<products.length; n++){
         fetch(base+`/api/images/getImage?image_id=${products[n].imagen_id}`)
         .then(response =>response.json())
-        .then(data => {image_name = data[0].nombre_imagen;
+        .then(data => {
+            console.log(data);
+            image_name = data[0].nombre_imagen;
             if (n == 0)
                 html += `<div class = 'carousel-item active'>`;
             else

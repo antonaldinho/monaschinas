@@ -44,12 +44,11 @@ create table ticket (
 	usuario_id varchar(40) references usuario(usuario_id),
 	total decimal,
 	fecha date,
-	comentarios varchar(200),
-	PRIMARY KEY (ticket_id)
+	comentarios varchar(200)
 );
 
 alter table producto add categoria varchar(50);
-alter table ticket add primary key (ticket_id)
+alter table ticket add primary key (ticket_id);
 
 create table productoticket (
 	productoticket_id serial PRIMARY KEY,
@@ -83,6 +82,9 @@ insert into usuario values (
 	'okcuck',
 	'cliente'
 );
+
+insert into imagen (nombre, nombre_imagen) values ('Senjougahara Hitagi Madoka', 'senjo.png');
+insert into imagen (nombre, nombre_imagen) values ('Sucy Manbavaran Nendoroid', 'sucy.png');
 insert into serie values ('boku-no-hero-academia', 'Boku no Hero Academia');
 insert into serie values ('monogatari-series', 'MONOGATARI Series');
 insert into serie values ('kimi-ni-todoke', 'Kimi ni Todoke');
@@ -111,7 +113,7 @@ insert into producto values (
 	3,
 	799,
 	1,
-	0,
+	20,
 	20,
 	'Banpresto'
 );
@@ -134,7 +136,7 @@ insert into producto values (
 	'little-witch-academia',
 	3,
 	299,
-	null,
+	2,
 	10,
 	10,
 	'Banpresto'
@@ -155,6 +157,3 @@ insert into ticket values (2, 'cuckarlos', 299, '04/27/2019', 'nice!' );
 insert into productoticket (producto_id, ticket_id, cantidad) values (123456789123, 1, 10);
 insert into productoticket (producto_id, ticket_id, cantidad) values (879065789756, 1, 2);
 insert into productoticket (producto_id, ticket_id, cantidad) values (738293678908, 2, 1);
-insert into imagen(nombre, nombre_imagen) values ('Senjougahara Hitagi Madoka', 'senjo.png');
-
-select * from producto p, ticket t, productoticket a where t.ticket_id = a.ticket_id and a.producto_id = p.producto_id and usuario_id = 'antonaldinho'
