@@ -25,7 +25,7 @@ $(document).ready(function() {
             if(response.success === 1) {
                 const userData = response.user;
                 $.session.set("userData", JSON.stringify(userData));
-                location.href = 'file:///D:/Projects/APIS/monaschinas/api/views/home.html';
+                location.href = '../views/home.html';
             }
             else {
                 alert("Usuario y/o contraseña no válidos");

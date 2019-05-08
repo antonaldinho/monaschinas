@@ -29,10 +29,14 @@ function populateProductTables() {
     }
       
     $.ajax(settings).done(function (response) {
-        //console.log(response);
         response.forEach(function(product) {
-            const newAppend = '<div id="' + product.producto_id + '" class="who_Quienes"> <br> <div class="login_titulo_producto"> <div class="login_titulo_text">Producto Nombre</div> </div> <form class="login_forma_producto"> <div class="login_forma_producto_part1"> <div class="login-forma-first"> <img class="login-forma-first-picture" src="https://via.placeholder.com/200"> </div> </div> <div class="login_forma_producto_part2"> <div class="login-forma-first"> <div class="login-title"> <label class="login-title_text" for="fname">Nombre del Producto</label> </div> <div class="login-input">' + product.nombre_producto + '<br><br> </div> </div> <div class="login-forma-first"> <div class="login-title"> <label class="login-title_text" for="fname">Precio</label> </div> <div class="login-input"> $' + product.precio + '<br><br> </div> </div> <div class="login-forma-first"> <div class="login-title"> <label class="login-title_text" for="lname">Descripción</label><br> </div> <div class="login-input">' + product.descripcion + '<br><br> </div> </div> </div> <div class="btn_producto_container"> <input class="btn_producto" onclick="loginBtn()" type="button" value="Comprar"> </div> </form> </div>';
-            tables.append(newAppend);
+            fetch(base+`/api/images/getImage?image_id=${product.imagen_id}`)
+            .then(image_data => image_data.json())
+            .then(image_obj => {
+                let image = image_obj[0] == undefined ? 'https://via.placeholder.com/200' : ('../images/'+image_obj[0].nombre_imagen);
+                const newAppend = '<div id="' + product.producto_id + '" class="who_Quienes_productos"> <br> <div class="login_titulo_producto"> <div class="login_titulo_text">Producto Nombre</div> </div> <form class="login_forma_producto"> <div class="login_forma_producto_part1"> <div class="login-forma-first"> <img class="login-forma-first-picture" src="' + image +'"> </div> </div> <div class="login_forma_producto_part2"> <div class="login-forma-first"> <div class="login-title"> <label class="login-title_text" for="fname">Nombre del Producto</label> </div> <div class="login-input">' + product.nombre_producto + '<br><br> </div> </div> <div class="login-forma-first"> <div class="login-title"> <label class="login-title_text" for="fname">Precio</label> </div> <div class="login-input"> $' + product.precio + '<br><br> </div> </div> <div class="login-forma-first"> <div class="login-title"> <label class="login-title_text" for="lname">Descripción</label><br> </div> <div class="login-input">' + product.descripcion + '<br><br> </div> </div> </div> <div class="btn_producto_container"> <input class="btn_producto" onclick="loginBtn()" type="button" value="Comprar"> </div> </form> </div>';
+                tables.append(newAppend);
+            })
         })
     });
 }
