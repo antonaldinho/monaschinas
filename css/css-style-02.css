@@ -13001,6 +13001,7 @@ h2.title-carousel {
         display: inline;
         float:left;
         margin-left: 1vw;
+        margin-bottom: 1vw;
     }
     .login_forma_producto_part1 {
         display: inline;
@@ -13044,6 +13045,35 @@ h2.title-carousel {
         -webkit-transition: all 0s;
         -o-transition: all 0s;
         transition: all 0s;
+    }
+    .carrito_forma_part1 {
+        display: inline;
+        float:left;
+        width:21%
+    }
+    .carrito_forma_part2 {
+        display: inline;
+        float:left;
+        width:49%
+    }
+    .carrito_forma_part3 {
+        display: inline;
+        float:left;
+        width:30%
+    }
+    .carrito_forma_part4 {
+        display: inline;
+        float:left;
+        width:100%
+    }
+    .login_forma_carrito {
+        background-color: #ffffff;
+        margin-bottom: 0vw;
+        display: inline;
+        float: left;
+        width: 100%;
+        border-style: solid;
+        border-width: 0px 0px 1.5px 0px;
     }
 }
 .top-message-hamburguer {
