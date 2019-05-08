@@ -5,7 +5,7 @@ function loadPurchaseTable (username) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://localhost:3000/api/ticket/getUserPurchaseHistory?user_id=antonaldinho",
+        "url": urls.getUserPurchaseHistory + username,
         "method": "GET",
         "headers": {
           "Content-Type": "application/json"

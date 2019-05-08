@@ -11,7 +11,7 @@ $(document).ready(function() {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "http://localhost:3000/login",
+            "url": urls.login,
             "method": "POST",
             "headers": {
               "Content-Type": "application/json"

@@ -42,33 +42,33 @@ const getUser = (request, response) => {
 };
 
 const addUser = (request, response) => {
-    if(!request.body.username) {
+    if(!request.query.username) {
         return response.send({
             msg: 'username param not given',
             success: 0
         })
     }
-    if(!request.body.email) {
+    if(!request.query.email) {
         return response.send({
             msg: 'param email not given',
             success: 0
         })
     }
-    if(!request.body.password) {
+    if(!request.query.password) {
         return response.send({
             msg: 'contrasena param not given',
             success: 0
         })
     }
 
-    if (checkUser(request.body.username)) {
+    if (checkUser(request.query.username)) {
         return response.send({
             msg: 'usuario',
             success: 0
         });
     }
     else {
-        const body = request.body;
+        const body = request.query;
         //console.log(body);
         const query = "INSERT INTO usuario VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)";
         const values = [body.username, body.name, body.email, body.address, body.city, body.state, body.cp, body.password, body.userType];

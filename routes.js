@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const cors = require('cors')
 
 const user = require('./controllers/users');
 const products = require('./controllers/products');
@@ -8,6 +9,7 @@ const series = require('./controllers/series');
 const characters = require('./controllers/characters');
 const images = require('./controllers/image');
 
+router.all('*', cors())
 router.get('/', (request, response) => {
     response.json({
         info: 'Welcome to the waifu API'
