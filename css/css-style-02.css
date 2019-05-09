@@ -13114,6 +13114,17 @@ h2.title-carousel {
         width: 98%;
         margin-left: 1vw;
     }
+
+    .field-wrapper {
+        visibility: hidden;
+    }
+    #minicart-container {
+        visibility: hidden;
+    }
+
+    .btn_producto_container {
+        visibility: hidden;
+    }
 }
 .top-message-hamburguer {
     display:none;
