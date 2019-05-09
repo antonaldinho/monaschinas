@@ -2,7 +2,7 @@ let fotos_promos_div = document.getElementById('fotos-promos-div');
 
 const placeImages = (products)=>{
     let div_class = 'carousel-item';
-    let img_class = 'd-block w-100';
+    let img_class = 'd-block w-25';
     let img_alt = 'slide-';
     let html ='' ;
     let image_name; 
